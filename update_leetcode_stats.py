@@ -39,7 +39,7 @@ with open(input_file, mode='r') as infile, open(output_file, mode='w', newline='
         last_name = row[2]
         leetcode_url = row[3]
         username = extract_username_from_url(leetcode_url)
-        print(f"Updating for {first_name}{last_name}:")
+        print(f"Updating for {first_name} {last_name}:")
         if username:
             solved_problems = get_solved_problems_count(username)
             if solved_problems != 'N/A':
@@ -51,7 +51,7 @@ with open(input_file, mode='r') as infile, open(output_file, mode='w', newline='
         else:
             solved_problems = 'N/A'
             no_username += 1
-            print(f"\tNo username for {first_name}{last_name}.")
+            print(f"\tNo username for {first_name} {last_name}.")
         row.append(solved_problems)
         writer.writerow(row)
 
